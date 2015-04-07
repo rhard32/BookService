@@ -19,7 +19,10 @@ namespace BookService.Models
         // GET: api/Books
         public IQueryable<Book> GetBooks()
         {
-            return db.Books;
+            return db.Books
+                // new code:
+        .Include(b => b.Author); 
+
         }
 
         // GET: api/Books/5
